@@ -1,0 +1,281 @@
+/**
+ * TBR DIGITAL MIXER — Dedicated Studio Views Styles
+ * Vocal Studio, Music Master, Preset Library, Sound Pads, Settings
+ */
+
+.studio-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 10px 14px;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+/* Studio Header / Preset Bar */
+.studio-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+}
+
+.studio-title-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.studio-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+.studio-badge.vocal {
+  background: var(--accent-cyan-dim);
+  color: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan);
+}
+
+.studio-badge.music {
+  background: rgba(138, 43, 226, 0.2);
+  color: #C084FC;
+  border: 1px solid var(--accent-purple);
+}
+
+.studio-preset-select {
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  outline: none;
+  min-width: 220px;
+}
+
+.ab-switch-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.ab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.ab-btn.active {
+  background: var(--accent-cyan);
+  color: #000;
+  box-shadow: 0 0 6px var(--accent-cyan-glow);
+}
+
+/* Studio Main Grid */
+.studio-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 10px;
+  flex: 1;
+}
+
+/* Visualizer Cards */
+.vis-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.vis-card-header {
+  padding: 6px 10px;
+  background: var(--bg-panel-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.canvas-container {
+  flex: 1;
+  position: relative;
+  background: #0E1014;
+  min-height: 180px;
+}
+
+canvas.vis-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* DSP Modules Rack */
+.dsp-modules-rack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.dsp-module-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 4px;
+}
+
+.module-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.module-knobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 8px;
+  align-items: center;
+}
+
+/* Gain Reduction Meter Horizontal */
+.gr-meter-bar {
+  width: 100%;
+  height: 6px;
+  background: #111317;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 4px;
+}
+
+.gr-fill {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: #F59E0B;
+  transition: width 0.05s linear;
+}
+
+/* Sound Pads 4x4 Grid */
+.sound-pads-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 8px;
+  flex: 1;
+}
+
+.sound-pad-btn {
+  background: linear-gradient(180deg, #222631 0%, #171A21 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  color: var(--text-secondary);
+}
+
+.sound-pad-btn:hover {
+  background: #2D3342;
+  border-color: var(--accent-cyan);
+}
+
+.sound-pad-btn:active, .sound-pad-btn.playing {
+  background: var(--accent-cyan);
+  color: #000;
+  box-shadow: 0 0 14px var(--accent-cyan);
+  transform: scale(0.98);
+}
+
+.pad-number {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+}
+
+.pad-label {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Settings Form */
+.settings-section-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.settings-card-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 4px;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.settings-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.settings-control {
+  min-width: 260px;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-size: 11px;
+}

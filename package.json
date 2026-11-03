@@ -1,0 +1,47 @@
+{
+  "name": "tbr-digital-mixer",
+  "productName": "TBR DIGITAL MIXER",
+  "version": "1.0.0",
+  "description": "TBR DIGITAL MIXER — Professional Audio Mixing Software",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node tests/run_all_tests.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win --x64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebontotradio-on/TBR-DigitalMixer.git"
+  },
+  "author": "The Bontot Radio Audio Engineering Team",
+  "license": "Proprietary",
+  "build": {
+    "appId": "com.thebontotradio.digitalmixer",
+    "productName": "TBR DIGITAL MIXER",
+    "directories": {
+      "output": "release-dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "portable": {
+      "artifactName": "TBR-Digital-Mixer-${version}-windows-x64.exe"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^24.22.1",
+    "electron-builder": "^24.13.3"
+  }
+}
